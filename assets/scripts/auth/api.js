@@ -9,6 +9,15 @@ const signUp = (formData) => {
     data: formData
   })
 }
+
+const signIn = (formData) => {
+  return $.ajax({
+    url: config.apiUrl + '/sign-in',
+    method: 'POST',
+    data: formData
+  })
+}
+
 // From example creation (will use for sign in / etc)
 
 // const createExample = (formData) => {
@@ -23,5 +32,6 @@ const signUp = (formData) => {
 // }
 
 module.exports = {
-  signUp
+  signUp,
+  signIn
 }
