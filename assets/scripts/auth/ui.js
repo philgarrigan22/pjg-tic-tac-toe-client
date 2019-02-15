@@ -9,7 +9,7 @@ const temporaryMessage = function (selector, text) {
 
 const signUpSuccess = () => {
   temporaryMessage('#user-message', 'Successfully Created User')
-  // Below rests form fields
+  // Below resets form fields
   $(`form`).trigger(`reset`)
 }
 
@@ -17,19 +17,34 @@ const signInSuccess = (responseData) => {
   temporaryMessage('#user-message', 'Successfully Signed in')
   // save the token
   store.user = responseData.user
-  // Below rests form fields
+  // Below resets form fields
+  $(`form`).trigger(`reset`)
+}
+
+const changePasswordSuccess = () => {
+  console.log('This is the email ' + store.user.email)
+  temporaryMessage('#user-message', store.user.email + ' successfully updated password!')
+  // Below resets form fields
+  $(`form`).trigger(`reset`)
+}
+
+const changePasswordFailure = () => {
+  temporaryMessage('#user-message', 'Changed Password Failure')
+  // Below resets form fields
   $(`form`).trigger(`reset`)
 }
 
 // Used for both sign up and sign in failure.
 const signUpFailure = () => {
   temporaryMessage('#user-message', 'Sign in error!!')
-  // Below rests form fields
+  // Below resets form fields
   $(`form`).trigger(`reset`)
 }
 
 module.exports = {
   signUpSuccess,
   signUpFailure,
-  signInSuccess
+  signInSuccess,
+  changePasswordSuccess,
+  changePasswordFailure
 }
