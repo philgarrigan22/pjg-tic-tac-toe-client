@@ -10,5 +10,6 @@ const authEvents = require('./auth/events.js')
 $(() => {
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
+  $('#change-password-form').on('submit', authEvents.onChangePassword)
   $('.box').on('click', gameEvents.onNewMove)
 })
