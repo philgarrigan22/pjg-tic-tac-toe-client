@@ -13,6 +13,19 @@ const createGame = () => {
   })
 }
 
+const showGames = () => {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+    // contentType: 'application/json',
+    // data: JSON.stringify(gameData)
+  })
+}
+
 module.exports = {
-  createGame
+  createGame,
+  showGames
 }

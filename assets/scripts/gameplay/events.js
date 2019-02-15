@@ -4,12 +4,18 @@ const ui = require('./ui.js')
 
 const onCreateGame = event => {
   event.preventDefault()
-  console.log('ONcreate game is invoked')
 
   api.createGame()
-
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure)
+}
+
+const onShowGames = event => {
+  event.preventDefault()
+
+  api.showGames()
+    .then(ui.showGamesSuccess)
+    .catch(ui.showGamesFailure)
 }
 
 const onNewMove = () => {
@@ -18,5 +24,6 @@ const onNewMove = () => {
 
 module.exports = {
   onCreateGame,
-  onNewMove
+  onNewMove,
+  onShowGames
 }
