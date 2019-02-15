@@ -30,7 +30,7 @@ const onChangePassword = (event) => {
     .catch(ui.changePasswordFailure)
 }
 
-const onSignOut = (event) => {
+const onSignOut = () => {
   event.preventDefault()
 
   api.signOut()
