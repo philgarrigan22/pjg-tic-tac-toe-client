@@ -1,14 +1,20 @@
 'use strict'
 const store = require('../store.js')
 
+// Add user message and auto disappear.
+const temporaryMessage = function (selector, text) {
+  $(selector).text(text)
+  setTimeout(() => $(selector).text(''), 3000)
+}
+
 const signUpSuccess = () => {
-  $('#user-message').text('Successfully Created User')
+  temporaryMessage('#user-message', 'Successfully Created User')
   // Below rests form fields
   $(`form`).trigger(`reset`)
 }
 
 const signInSuccess = (responseData) => {
-  $('#user-message').text('Successfully Signed in')
+  temporaryMessage('#user-message', 'Successfully Signed in')
   // save the token
   store.user = responseData.user
   // Below rests form fields
@@ -17,7 +23,7 @@ const signInSuccess = (responseData) => {
 
 // Used for both sign up and sign in failure.
 const signUpFailure = () => {
-  $('#user-message').text('Sign in error!!')
+  temporaryMessage('#user-message', 'Sign in error!!')
   // Below rests form fields
   $(`form`).trigger(`reset`)
 }
