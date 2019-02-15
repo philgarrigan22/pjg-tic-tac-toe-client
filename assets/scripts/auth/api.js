@@ -29,6 +29,16 @@ const changePassword = (formData) => {
   })
 }
 
+const signOut = () => {
+  return $.ajax({
+    url: config.apiUrl + '/sign-out',
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 // From example creation (will use for sign in / etc)
 
 // const createExample = (formData) => {
@@ -45,5 +55,6 @@ const changePassword = (formData) => {
 module.exports = {
   signUp,
   signIn,
-  changePassword
+  changePassword,
+  signOut
 }

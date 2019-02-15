@@ -21,8 +21,14 @@ const signInSuccess = (responseData) => {
   $(`form`).trigger(`reset`)
 }
 
+// Used for both sign up and sign in failure.
+const signUpFailure = () => {
+  temporaryMessage('#user-message', 'Sign in error!!')
+  // Below resets form fields
+  $(`form`).trigger(`reset`)
+}
+
 const changePasswordSuccess = () => {
-  console.log('This is the email ' + store.user.email)
   temporaryMessage('#user-message', store.user.email + ' successfully updated password!')
   // Below resets form fields
   $(`form`).trigger(`reset`)
@@ -34,9 +40,14 @@ const changePasswordFailure = () => {
   $(`form`).trigger(`reset`)
 }
 
-// Used for both sign up and sign in failure.
-const signUpFailure = () => {
-  temporaryMessage('#user-message', 'Sign in error!!')
+const signOutSuccess = () => {
+  temporaryMessage('#user-message', store.user.email + ' has successfully logged out!')
+  // Below resets form fields
+  $(`form`).trigger(`reset`)
+}
+
+const signOutFailure = () => {
+  temporaryMessage('#user-message', 'Sign out error!!')
   // Below resets form fields
   $(`form`).trigger(`reset`)
 }
@@ -46,5 +57,7 @@ module.exports = {
   signUpFailure,
   signInSuccess,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  signOutSuccess,
+  signOutFailure
 }
