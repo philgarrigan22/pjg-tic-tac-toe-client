@@ -17,36 +17,39 @@
       <section class="container">
 
       <header> <!-- Header containing the three forms needed for sign up, sign in, and change password -->
-      <div class="col-12 alt-color">
-        <form id="sign-up-form">
-          <input name="credentials[email]" type="email" placeholder="Enter email">
+        <div class="col-12 alt-color">
+          <form id="sign-up-form">
+            <input name="credentials[email]" type="email" placeholder="Enter email">
+            <input name="credentials[password]" type="password" placeholder="password">
+            <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
+            <input type="submit" value="Sign Up">
+          </form>
+        </div>
+
+        <div class="col-12 alt-color">
+          <form id="sign-in-form">
+          <input name="credentials[email]" type="email" placeholder="email">
           <input name="credentials[password]" type="password" placeholder="password">
-          <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
-          <input type="submit" value="Sign Up">
+          <input type="submit" value="Sign In">
+          </form>
+        </div>
+
+        <div class="col-12 alt-color">
+          <form id="change-password-form">
+          <input name="passwords[old]" type="password" placeholder="old password">
+          <input name="passwords[new]" type="password" placeholder="new password">
+          <input type="submit" value="Change Password">
         </form>
-      </div>
 
-      <div class="col-12 alt-color">
-        <form id="sign-in-form">
-        <input name="credentials[email]" type="email" placeholder="email">
-        <input name="credentials[password]" type="password" placeholder="password">
-        <input type="submit" value="Sign In">
-        </form>
-      </div>
-
-      <div class="col-12 alt-color">
-        <form id="change-password-form">
-        <input name="passwords[old]" type="password" placeholder="old password">
-        <input name="passwords[new]" type="password" placeholder="new password">
-        <input type="submit" value="Change Password">
-      </form>
-
-      <button id="sign-out-button">Sign Out</button>
-
-      </div>
+        <button id="sign-out-button">Sign Out</button>
+        </div>
       </header>
 
-        <div class="game-board my-5">
+      <br>
+      <h3 id="user-message"></h3>
+      <br>
+
+        <section class="game-board my-5">
             <div class="row">
               <div id="square0" class="col-4 box alt-color">Block 0</div>
               <div id="square1"class="col-4 box alt-color">Block 1</div>
@@ -58,9 +61,19 @@
               <div id="square7"class="col-4 box alt-color">Block 7</div>
               <div id="square8"class="col-4 box alt-color">Block 8</div>
             </div>
-          </div>
+          </section>
 
-        <p id="user-message"></p>
+        <br>
+        <h3 id="game-message"></h3>
+        <br>
+
+        <section class="game-requests">
+          <button id="new-game-button">New Game</button>
+          <button id="get-games-button">Show Past Games</button>
+        </section>
+
+
+
 
       </section>
     </body>
