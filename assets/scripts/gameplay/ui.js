@@ -1,6 +1,7 @@
 'use strict'
 const store = require('../store.js')
 const gameLogic = require('./gamelogic.js')
+const gameActions = require('./game-actions.js')
 
 const temporaryMessage = (selector, text) => {
   $(selector).html(text)
@@ -9,15 +10,11 @@ const temporaryMessage = (selector, text) => {
 
 const createGameSuccess = (gameData) => {
   // begin new game with blank board, other game info from API rrequest, and start player as 'x'
-  store.over = gameData.game.over
-  store.gameID = gameData.game.id
-  store.cells = gameData.game.cells
-  store.player = 'x'
-  // Display new game created message
+  gameActions.setGameBoard(gameData)
+  // Display new game created message, then reset form fields
   temporaryMessage('#user-message', 'New Game Successfully Created')
-  // Below resets form fields
   $(`form`).trigger(`reset`)
-  // Display who's turn it is / check empty board
+  // Display who's turn it is / empty board
   $('#game-message').html(`<h3> Player ${store.player}'s turn. </h3>`)
   $('.box').empty()
 }
