@@ -32,16 +32,19 @@ const showGamesSuccess = (responseData) => {
   temporaryMessage('#user-message', 'Successfully accesed past games.')
   // Below resets form fields
   $(`form`).trigger(`reset`)
-  responseData.games.forEach(games => {
-    const exampleHtml = (`
-    <p>ID: ${games.id}</p>
-    <p>Gameboard: ${games.cells}</p>
-    <p>Gameover?: ${games.over}</p>
-    <br>
-    `)
 
-    $('#show-games-list').append(exampleHtml)
-  })
+  // // code below pulls up listing of all game data played, but does not show
+  // // actual game board moves made.
+  // responseData.games.forEach(games => {
+  // const exampleHtml = (`
+  // <p>ID: ${games.id}</p>
+  // <p>Gameboard: ${games.cells}</p>
+  // <p>Gameover?: ${games.over}</p>
+  // <br>
+  // `)
+
+  $('#show-games-list').html(`You have played ${responseData.games.length} total games`)
+  // })
 }
 
 const showGamesFailure = () => {
