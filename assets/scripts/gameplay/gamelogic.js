@@ -1,30 +1,5 @@
 const store = require('../store.js')
 
-// Determines if player move is valid, and if so, changes players.
-const changeTurn = () => {
-  console.log('gamelogic changeTurn is invoked')
-
-  if (store.player === 'x') {
-    store.player = 'o'
-  } else {
-    store.player = 'x'
-  }
-}
-
-// Set game board to check if the game is over or not
-const gameBoard = () => {
-  console.log('gamelogic gameBoard is invoked')
-
-  // if game isn't over, then check whether the cell value is empty
-  // if it is then record the value of that cell as either 'X' or 'O'
-  if (store.cells[store.id] === '') {
-    store.cells[store.id] = store.player
-
-  // if the cell value isn't empty and equals 'x' or 'o' then store an invalid move
-  } else if (store.cells[store.id] === 'x' || 'o') {
-  }
-}
-
 // Checks if the array has the winning/draw conditions
 const winConditions = (boardSpace) => {
   console.log('gamelogic winConditions is invoked')
@@ -89,7 +64,5 @@ const winConditions = (boardSpace) => {
 // winConditions(gameBoard)
 
 module.exports = {
-  gameBoard,
-  winConditions,
-  changeTurn
+  winConditions
 }
