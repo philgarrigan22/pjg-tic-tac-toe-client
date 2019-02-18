@@ -8,18 +8,11 @@ const temporaryMessage = (selector, text) => {
 }
 
 const createGameSuccess = (gameData) => {
-  console.log('creategame success is invoked')
   // begin new game with blank board, other game info from API rrequest, and start player as 'x'
   store.over = gameData.game.over
   store.gameID = gameData.game.id
   store.cells = gameData.game.cells
   store.player = 'x'
-
-  // console.log('over is ' + store.over)
-  // console.log('id is ' + id)
-  // console.log('value is ' + value)
-  // console.log(store)
-
   // Display new game created message
   temporaryMessage('#user-message', 'New Game Successfully Created')
   // Below resets form fields
@@ -51,22 +44,22 @@ const showGamesSuccess = (responseData) => {
   })
 }
 
-// const showGamesFailure = () => {
-//   console.log('showGamesFailure is invoked')
-// }
-//
+const showGamesFailure = () => {
+  temporaryMessage('#user-message', 'Unable to show games.')
+  // Below resets form fields
+  $(`form`).trigger(`reset`)
+}
+
 const newMoveSucess = (id) => {
 //   if (store.player === 'x' && store.over === false && store.cells === '') {
   console.log('new move success is being invoked')
 
-  // gameLogic.gameBoard(store.id, store.player)
   if (store.over) {
     $('#game-message').html('<h3>Game Over</h3>')
     return
   }
+
   if (store.cells[store.id]) {
-    console.log('TEST FOR TEST')
-    console.log(store.cells[store.id])
     $('#game-message').html('Misclicked')
     return
   }
@@ -80,6 +73,12 @@ const newMoveSucess = (id) => {
   gameLogic.gameBoard()
   gameLogic.changeTurn(store.player)
   gameLogic.winConditions(store.cells)
+
+  if (store.winner) {
+    $('#game-message').html('<h3>Game Over</h3>')
+  } else {
+    $('#game-message').html(`<h3>Player ${store.player}'s turn.</h3>`)
+  }
   // check if the game is over
 
   // check if the gameplay box is occuppied or not
@@ -88,8 +87,6 @@ const newMoveSucess = (id) => {
 
   // below code works and places x or o on the board, based on the turn. However,
   // this does not successfully stop if game is over or space is already filled.
-
-  $('#game-message').html(`<h3>Player ${store.player}'s turn.</h3>`)
 }
 
 // $(event.target).text(store.player)
@@ -105,7 +102,7 @@ module.exports = {
   createGameSuccess,
   createGameFailure,
   showGamesSuccess,
-  // showGamesFailure,
+  showGamesFailure,
   newMoveSucess
   // newMoveFailure
 }
