@@ -1,7 +1,7 @@
 const store = require('../store.js')
 
 // Determines if player move is valid, and if so, changes players.
-const changeTurn = (switchUser) => {
+const changeTurn = () => {
   console.log('gamelogic changeTurn is invoked')
 
   if (store.player === 'x') {
@@ -19,11 +19,9 @@ const gameBoard = () => {
   // if it is then record the value of that cell as either 'X' or 'O'
   if (store.cells[store.id] === '') {
     store.cells[store.id] = store.player
-    store.invalidMove = false
 
   // if the cell value isn't empty and equals 'x' or 'o' then store an invalid move
   } else if (store.cells[store.id] === 'x' || 'o') {
-    store.invalidMove = true
   }
 }
 
