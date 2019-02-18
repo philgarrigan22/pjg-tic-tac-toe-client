@@ -1,5 +1,4 @@
 'use strict'
-
 const store = require('../store.js')
 
 const setGameBoard = (gameData) => {
@@ -10,6 +9,12 @@ const setGameBoard = (gameData) => {
   store.winner = ''
 }
 
+const temporaryMessage = (selector, text) => {
+  $(selector).html(text)
+  setTimeout(() => $(selector).html(''), 3500)
+}
+
 module.exports = {
-  setGameBoard
+  setGameBoard,
+  temporaryMessage
 }

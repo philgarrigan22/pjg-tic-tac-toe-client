@@ -5,11 +5,9 @@ const store = require('../store.js')
 
 const onCreateGame = event => {
   event.preventDefault()
-
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure)
-
   console.log(store.game)
 }
 

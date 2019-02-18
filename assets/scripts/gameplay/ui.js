@@ -3,16 +3,11 @@ const store = require('../store.js')
 const gameLogic = require('./gamelogic.js')
 const gameActions = require('./game-actions.js')
 
-const temporaryMessage = (selector, text) => {
-  $(selector).html(text)
-  setTimeout(() => $(selector).html(''), 3000)
-}
-
 const createGameSuccess = (gameData) => {
   // begin new game with blank board, other game info from API rrequest, and start player as 'x'
   gameActions.setGameBoard(gameData)
   // Display new game created message, then reset form fields
-  temporaryMessage('#user-message', 'New Game Successfully Created')
+  gameActions.temporaryMessage('#user-message', 'New Game Successfully Created')
   $(`form`).trigger(`reset`)
   // Display who's turn it is / empty board
   $('#game-message').html(`<h3> Player ${store.player}'s turn. </h3>`)
@@ -20,13 +15,13 @@ const createGameSuccess = (gameData) => {
 }
 
 const createGameFailure = () => {
-  temporaryMessage('#user-message', 'Unable to create new game.')
-  // Below resets form fields
+  // Display error message, then reset form fields
+  gameActions.temporaryMessage('#user-message', 'Unable to create new game.')
   $(`form`).trigger(`reset`)
 }
 
 const showGamesSuccess = (responseData) => {
-  temporaryMessage('#user-message', 'Successfully accesed past games.')
+  gameActions.temporaryMessage('#user-message', 'Successfully accesed past games.')
   // Below resets form fields
   $(`form`).trigger(`reset`)
 
@@ -45,7 +40,7 @@ const showGamesSuccess = (responseData) => {
 }
 
 const showGamesFailure = () => {
-  temporaryMessage('#user-message', 'Unable to show games.')
+  gameActions.temporaryMessage('#user-message', 'Unable to show games.')
   // Below resets form fields
   $(`form`).trigger(`reset`)
 }

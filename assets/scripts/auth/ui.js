@@ -1,20 +1,15 @@
 'use strict'
 const store = require('../store.js')
-
-// Add user message and auto disappear.
-const temporaryMessage = function (selector, text) {
-  $(selector).text(text)
-  setTimeout(() => $(selector).text(''), 3000)
-}
+const gameActions = require('../gameplay/game-actions.js')
 
 const signUpSuccess = () => {
-  temporaryMessage('#user-message', 'Successfully Created User')
+  gameActions.temporaryMessage('#user-message', 'Successfully Created User')
   // Below resets form fields
   $(`form`).trigger(`reset`)
 }
 
 const signInSuccess = (responseData) => {
-  temporaryMessage('#user-message', 'Successfully Signed in')
+  gameActions.temporaryMessage('#user-message', 'Successfully Signed in')
   // save the token
   store.user = responseData.user
   // Below resets form fields
@@ -23,31 +18,31 @@ const signInSuccess = (responseData) => {
 
 // Used for both sign up and sign in failure.
 const signUpFailure = () => {
-  temporaryMessage('#user-message', 'Sign in error!!')
+  gameActions.temporaryMessage('#user-message', 'Sign in error!!')
   // Below resets form fields
   $(`form`).trigger(`reset`)
 }
 
 const changePasswordSuccess = () => {
-  temporaryMessage('#user-message', store.user.email + ' successfully updated password!')
+  gameActions.temporaryMessage('#user-message', store.user.email + ' successfully updated password!')
   // Below resets form fields
   $(`form`).trigger(`reset`)
 }
 
 const changePasswordFailure = () => {
-  temporaryMessage('#user-message', 'Changed Password Failure')
+  gameActions.temporaryMessage('#user-message', 'Changed Password Failure')
   // Below resets form fields
   $(`form`).trigger(`reset`)
 }
 
 const signOutSuccess = () => {
-  temporaryMessage('#user-message', store.user.email + ' has successfully logged out!')
+  gameActions.temporaryMessage('#user-message', store.user.email + ' has successfully logged out!')
   // Below resets form fields
   $(`form`).trigger(`reset`)
 }
 
 const signOutFailure = () => {
-  temporaryMessage('#user-message', 'Sign out error!!')
+  gameActions.temporaryMessage('#user-message', 'Sign out error!!')
   // Below resets form fields
   $(`form`).trigger(`reset`)
 }
