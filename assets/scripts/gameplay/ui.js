@@ -53,7 +53,7 @@ const showGamesFailure = () => {
   $(`form`).trigger(`reset`)
 }
 
-const newMoveSucess = (id) => {
+const newMoveSuccess = (id) => {
 //   if (store.player === 'x' && store.over === false && store.cells === '') {
   console.log('new move success is being invoked')
 
@@ -106,6 +106,6 @@ module.exports = {
   createGameFailure,
   showGamesSuccess,
   showGamesFailure,
-  newMoveSucess
+  newMoveSuccess
   // newMoveFailure
 }
