@@ -15,14 +15,14 @@ const createGameSuccess = (gameData) => {
 }
 
 const createGameFailure = () => {
-  // Display error message, then reset form fields
+  // Display error message, then reset form fields.
   gameActions.temporaryMessage('#user-message', 'Unable to create new game.')
   $(`form`).trigger(`reset`)
 }
 
 const showGamesSuccess = (responseData) => {
+  // Display message, reset form fields, then show amount of games played.
   gameActions.temporaryMessage('#user-message', 'Successfully accesed past games.')
-  // Below resets form fields
   $(`form`).trigger(`reset`)
 
   // // code below pulls up listing of all game data played, but does not show
@@ -40,58 +40,36 @@ const showGamesSuccess = (responseData) => {
 }
 
 const showGamesFailure = () => {
+  // Display message, reset form fields.
   gameActions.temporaryMessage('#user-message', 'Unable to show games.')
-  // Below resets form fields
   $(`form`).trigger(`reset`)
 }
 
 const newMoveSuccess = (id) => {
-//   if (store.player === 'x' && store.over === false && store.cells === '') {
   console.log('new move success is being invoked')
-
+  // Check if game state is over. If it is, display game over message and stop
+  // running function. If game not over, check if the cell being clicked on is
+  // already filled. If cell is already filled, display misclick message and
+  // stop running the function. If cell not already filled check which player
+  // is making the move. Then add that player (x or o) text to the cell being clicked.
   if (store.over) {
-    $('#game-message').html('<h3>Game Over</h3>')
     return
   }
-
   if (store.cells[store.id]) {
     $('#game-message').html('Misclicked')
     return
   }
-
   if (store.player === 'x') {
     $(event.target).text('X')
   } else if (store.player === 'o') {
     $(event.target).text('O')
   }
-
-  gameLogic.gameBoard()
-  gameLogic.changeTurn(store.player)
+  gameActions.gameBoard()
+  gameActions.changeTurn(store.player)
   gameLogic.winConditions(store.cells)
-
-  if (store.winner) {
-    $('#game-message').html('<h3>Game Over</h3>')
-  } else {
-    $('#game-message').html(`<h3>Player ${store.player}'s turn.</h3>`)
-  }
-  // check if the game is over
-
-  // check if the gameplay box is occuppied or not
-
-  // if (store.invalid) { $('#game-message').html('Misclicked') }
-
-  // below code works and places x or o on the board, based on the turn. However,
-  // this does not successfully stop if game is over or space is already filled.
+  // Check if winner is defined. If so, display 'game over' message.
+  gameActions.checkGameOver()
 }
-
-// $(event.target).text(store.player)
-
-//   }
-// }
-//
-// const newMoveFailure = () => {
-//   console.log('newMoveFailure is invoked')
-// }
 
 module.exports = {
   createGameSuccess,
