@@ -4,24 +4,23 @@ const gameLogic = require('./gamelogic.js')
 const gameActions = require('./game-actions.js')
 
 const createGameSuccess = (gameData) => {
-  // begin new game with blank board, other game info from API rrequest, and start player as 'x'
   gameActions.setGameBoard(gameData)
-  // Display new game created message, then reset form fields
+  // Display new game created message, then reset form fields. Display who's
+  // turn it is / empty board for when new games are started.
   gameActions.temporaryMessage('#user-message', 'New Game Successfully Created')
   $(`form`).trigger(`reset`)
-  // Display who's turn it is / empty board
   $('#game-message').html(`<h3> Player ${store.player}'s turn. </h3>`)
   $('.box').empty()
 }
 
+// Display error message, then reset form fields.
 const createGameFailure = () => {
-  // Display error message, then reset form fields.
   gameActions.temporaryMessage('#user-message', 'Unable to create new game.')
   $(`form`).trigger(`reset`)
 }
 
+// Display message, reset form fields, then show amount of games played.
 const showGamesSuccess = (responseData) => {
-  // Display message, reset form fields, then show amount of games played.
   gameActions.temporaryMessage('#user-message', 'Successfully accesed past games.')
   $(`form`).trigger(`reset`)
 
@@ -39,19 +38,19 @@ const showGamesSuccess = (responseData) => {
   // })
 }
 
+// Display error message, then reset form fields.
 const showGamesFailure = () => {
-  // Display message, reset form fields.
   gameActions.temporaryMessage('#user-message', 'Unable to show games.')
   $(`form`).trigger(`reset`)
 }
 
+// Check if game state is over. If it is, display game over message and stop
+// running function. If game not over, check if the cell being clicked on is
+// already filled. If cell is already filled, display misclick message and
+// stop running the function. If cell not already filled check which player
+// is making the move. Then add that player (x or o) text to the cell being clicked.
 const newMoveSuccess = (id) => {
   console.log('new move success is being invoked')
-  // Check if game state is over. If it is, display game over message and stop
-  // running function. If game not over, check if the cell being clicked on is
-  // already filled. If cell is already filled, display misclick message and
-  // stop running the function. If cell not already filled check which player
-  // is making the move. Then add that player (x or o) text to the cell being clicked.
   if (store.over) {
     return
   }
