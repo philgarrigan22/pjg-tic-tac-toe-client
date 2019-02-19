@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -19,6 +19,7 @@
       <header> <!-- Header containing the three forms needed for sign up, sign in, and change password -->
         <div class="col-12 alt-color">
           <form id="sign-up-form">
+            <legend>Sign-Up</legend>
             <input name="credentials[email]" type="email" placeholder="Enter email">
             <input name="credentials[password]" type="password" placeholder="password">
             <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
@@ -28,28 +29,32 @@
 
         <div class="col-12 alt-color">
           <form id="sign-in-form">
+          <legend>Sign-In</legend>
           <input name="credentials[email]" type="email" placeholder="email">
           <input name="credentials[password]" type="password" placeholder="password">
           <input type="submit" value="Sign In">
           </form>
         </div>
 
-        <div class="col-12 alt-color">
+        <div class="col-12 alt-color hidden">
           <form id="change-password-form">
+          <legend>Change Password</legend>
           <input name="passwords[old]" type="password" placeholder="old password">
           <input name="passwords[new]" type="password" placeholder="new password">
           <input type="submit" value="Change Password">
         </form>
+      </div>
 
+      <div class="col-12 alt-color hidden">
         <button id="sign-out-button">Sign Out</button>
-        </div>
-      </header>
+      </div>
+    </header>
 
       <br>
       <div id="user-message"></div>
       <br>
 
-        <section class="game-board my-5">
+        <section class="game-board my-5 hidden">
             <div class="row">
               <div class="col-4 box alt-color" data-cell-index="0"></div>
               <div class="col-4 box alt-color" data-cell-index="1"></div>
@@ -67,12 +72,12 @@
         <div id="game-message"></div>
         <br>
 
-        <section class="game-requests">
+        <section class="game-requests hidden">
           <button id="new-game-button">New Game</button>
           <button id="get-games-button">Show Past Games</button>
         </section>
 
-        <section class="game-stats">
+        <section class="game-stats hidden">
         <h3 id="show-games-list"></h3>
         </section>
 
