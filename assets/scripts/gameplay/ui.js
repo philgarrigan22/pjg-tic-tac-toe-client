@@ -3,14 +3,17 @@ const store = require('../store.js')
 const gameLogic = require('./gamelogic.js')
 const gameActions = require('./game-actions.js')
 
+// Display new game created message, then reset form fields. Display who's
+// turn it is and empty board for when new games are started.
 const createGameSuccess = (gameData) => {
   gameActions.setGameBoard(gameData)
-  // Display new game created message, then reset form fields. Display who's
-  // turn it is / empty board for when new games are started.
   gameActions.temporaryMessage('#user-message', 'New Game Successfully Created')
   $(`form`).trigger(`reset`)
   $('#game-message').html(`<h3> Player ${store.player}'s turn. </h3>`)
   $('.box').empty()
+  // show game board once new game is started.
+  $('.game-board').removeClass('hidden')
+  $('#game-message').removeClass('hidden')
 }
 
 // Display error message, then reset form fields.
@@ -35,6 +38,7 @@ const showGamesSuccess = (responseData) => {
   // `)
 
   $('#show-games-list').html(`You have played ${responseData.games.length} total games`)
+  $('.game-stats').removeClass('hidden')
   // })
 }
 
