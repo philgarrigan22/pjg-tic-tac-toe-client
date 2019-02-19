@@ -11,25 +11,57 @@ header {
   padding-top: 1rem;
 }
 
-.box {
-  align-items: center;
-  background-color: $secondary;
-  border: 1px solid $white;
-  color: $font-color;
-  display: flex;
-  height: 80px;
-  justify-content: center;
+.gamearea {
+  margin: auto;
+  max-height: 90vh;
+  max-width: 90vh;
+  width: 90%;
 }
+
+.gameboard {
+  display: flex;
+  flex-wrap: wrap;
+
+  > div {
+    align-items: center;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    display: flex;
+    font-size: 12vh;
+    justify-content: center;
+    line-height: 1;
+    min-height: calc(100% / 3);
+
+    &:nth-child(3n) {
+      border-right: 0;
+    }
+
+    &:nth-last-child(-1n + 3) {
+      border-bottom: 0;
+    }
+  }
+}
+
+
+// .box {
+//   align-items: center;
+//   background-color: $secondary;
+//   border: 1px solid $white;
+//   color: $font-color;
+//   display: flex;
+//   height: 80px;
+//   justify-content: center;
+// }
 
 .alt-color {
   background-color: $alt-color;
 }
 
-.game-board {
-  margin: auto;
-  width: 400px;
-}
+// .game-board {
+//   margin: auto;
+//   width: 400px;
+// }
 
-.hidden {
-  display: none;
-}
+// .hidden {
+//   display: none;
+// }
