@@ -27,7 +27,7 @@ const onNewMove = (event) => {
 
   api.newMove(store.id, store.player, store.over)
     .then(ui.newMoveSuccess(id))
-    .catch(ui.newMoveFailure)
+    .catch()
 
   console.log('this is the store ')
   console.log(store)
