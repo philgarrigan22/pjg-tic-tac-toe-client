@@ -9,11 +9,17 @@ const signUpSuccess = () => {
 }
 
 const signInSuccess = (responseData) => {
+  // Display success message, save the user info to store, and reset form fields.
   gameActions.temporaryMessage('#user-message', 'Successfully Signed in')
-  // save the token
   store.user = responseData.user
-  // Below resets form fields
   $(`form`).trigger(`reset`)
+
+  $('#change-password-form').removeClass('hidden')
+  $('#sign-out-button').removeClass('hidden')
+  $('#sign-up-form').addClass('hidden')
+  $('#sign-in-form').addClass('hidden')
+  $('#new-game-button').removeClass('hidden')
+  $('#get-games-button').removeClass('hidden')
 }
 
 // Used for both sign up and sign in failure.
