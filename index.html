@@ -17,24 +17,26 @@
       <section class="container">
 
       <header> <!-- Header containing the three forms needed for sign up, sign in, and change password -->
-        <div class="col-12">
-          <form id="sign-up-form">
-            <legend>Sign-Up</legend>
-            <input name="credentials[email]" type="email" placeholder="Enter email">
-            <input name="credentials[password]" type="password" placeholder="password">
-            <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
-            <input type="submit" value="Sign Up">
-          </form>
-        </div>
+        <section class="col-12 load-authentication">
+          <div class="col-6">
+            <form id="sign-up-form">
+              <legend>Sign-Up</legend>
+              <input name="credentials[email]" type="email" placeholder="Enter email">
+              <input name="credentials[password]" type="password" placeholder="password">
+              <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
+              <input type="submit" value="Sign Up">
+            </form>
+          </div>
 
-        <div class="col-12">
-          <form id="sign-in-form">
-          <legend>Sign-In</legend>
-          <input name="credentials[email]" type="email" placeholder="email">
-          <input name="credentials[password]" type="password" placeholder="password">
-          <input type="submit" value="Sign In">
-          </form>
-        </div>
+          <div class="col-6">
+            <form id="sign-in-form">
+            <legend>Sign-In</legend>
+            <input name="credentials[email]" type="email" placeholder="email">
+            <input name="credentials[password]" type="password" placeholder="password">
+            <input type="submit" value="Sign In">
+            </form>
+          </div>
+        </section>
 
         <div class="col-12">
           <form id="change-password-form" class="hidden">
