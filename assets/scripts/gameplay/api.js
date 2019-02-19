@@ -28,23 +28,31 @@ const showGames = () => {
 
 const newMove = (index, value, over) => {
   console.log('API newMove is invoked')
+  console.log(`${typeof index} ${typeof value} ${typeof over}`)
+  // console.log(JSON.stringify({
+  //   'game': {
+  //     'cells': {
+  //       'index': index,
+  //       'value': value
+  //     },
+  //     'over': over
+  //   }
+  // }))
   return $.ajax({
     url: config.apiUrl + '/games/' + store.gameID,
     method: 'PATCH',
-    contentType: 'application/json',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data: JSON.stringify({
-      'game': {
-        'cells': {
-          'index': index,
-          'value': value
+    headers: { Authorization: 'Token token=' + store.user.token },
+    data: {
+      game: {
+        cell: {
+          index: index,
+          value: value
         },
-        'over': over
+        over: over
       }
-    })
-  })
+    }
+  }
+  )
 }
 
 module.exports = {
