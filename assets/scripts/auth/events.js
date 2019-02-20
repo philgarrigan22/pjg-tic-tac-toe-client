@@ -43,10 +43,16 @@ const onSignUpToggle = () => {
   $('#sign-in-box').addClass('hidden')
 }
 
+const onSignUpCancel = () => {
+  $('#sign-up-box').addClass('hidden')
+  $('#sign-in-box').removeClass('hidden')
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
-  onSignUpToggle
+  onSignUpToggle,
+  onSignUpCancel
 }

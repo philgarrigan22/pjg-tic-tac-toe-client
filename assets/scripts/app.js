@@ -16,4 +16,5 @@ $(() => {
   $('#get-games-button').on('click', gameEvents.onShowGames)
   $('.box').on('click', gameEvents.onNewMove)
   $('.sign-up-toggle').on('click', authEvents.onSignUpToggle)
+  $('.sign-up-cancel-toggle').on('click', authEvents.onSignUpCancel)
 })
