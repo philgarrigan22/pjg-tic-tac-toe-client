@@ -29,19 +29,9 @@ const showGamesSuccess = (responseData) => {
   gameActions.temporaryMessage('#user-message', 'Successfully accesed past games.')
   $(`form`).trigger(`reset`)
 
-  // // code below pulls up listing of all game data played, but does not show
-  // // actual game board moves made.
-  // responseData.games.forEach(games => {
-  // const exampleHtml = (`
-  // <p>ID: ${games.id}</p>
-  // <p>Gameboard: ${games.cells}</p>
-  // <p>Gameover?: ${games.over}</p>
-  // <br>
-  // `)
-
   $('#show-games-list').html(`You have played ${responseData.games.length} total games`)
+  $('#show-games-list').removeClass('hidden')
   $('.game-stats').removeClass('hidden')
-  // })
 }
 
 // Display error message, then reset form fields.

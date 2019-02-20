@@ -56,7 +56,9 @@ const signOutSuccess = () => {
   $('#get-games-button').addClass('hidden')
   $('.game-board').addClass('hidden')
   $('.game-stats').addClass('hidden')
+  $('#show-games-list').addClass('hidden')
   $('#game-message').addClass('hidden')
+  $('#show-games-list').html('')
 }
 
 // Display failure message, then reset form fields.
