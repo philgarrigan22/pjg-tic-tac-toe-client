@@ -15,7 +15,7 @@ const winConditions = (boardSpace) => {
     (boardSpace[2] === 'x' && boardSpace[4] === 'x' && boardSpace[6] === 'x')
   ) {
     console.log('Player X wins!')
-    $('#user-message').html('Player X wins')
+    $('#win-message').html('Player X wins')
 
     // if 'x' win, store the game state as over, the player as x, the winner as
     // user 'x' add 1 to the xwins counter, and display winner 'X' message.
@@ -36,7 +36,7 @@ const winConditions = (boardSpace) => {
   (boardSpace[2] === 'o' && boardSpace[4] === 'o' && boardSpace[6] === 'o')
   ) {
     console.log('Player O wins!')
-    $('#user-message').html('Player O wins')
+    $('#win-message').html('Player O wins')
     // if 'o' win, store the game state as over, the player as x, the winner as
     // user 'o', add 1 to the owins counter, and display winner 'O' message.
     store.over = true
@@ -51,7 +51,7 @@ const winConditions = (boardSpace) => {
     boardSpace[6] !== '' && boardSpace[7] !== '' && boardSpace[8] !== '')
   ) {
     console.log('Tie game')
-    $('#user-message').html(`It's a draw!`)
+    $('#win-message').html(`It's a draw!`)
 
     // if game is a draw, store the game state as over, the player as x, the
     // winner as 'draw', and display game is a draw message.
