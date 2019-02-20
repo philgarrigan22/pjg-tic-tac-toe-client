@@ -13,7 +13,7 @@ const setGameBoard = (gameData) => {
 // Function to display temporaty message to whatever HTML area selected.
 const temporaryMessage = (selector, text) => {
   $(selector).html(text)
-  setTimeout(() => $(selector).html(''), 3500)
+  setTimeout(() => $(selector).html('<h3></h3>'), 3500)
 }
 
 // Check if winner is defined. If so, display 'game over' message.

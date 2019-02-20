@@ -26,10 +26,11 @@ const createGameFailure = () => {
 // Display message, reset form fields, then show amount of games played.
 const showGamesSuccess = (responseData) => {
   console.log(responseData)
-  gameActions.temporaryMessage('#user-message', 'Successfully accesed past games.')
+  gameActions.temporaryMessage('#user-message', 'Successfully accesed past games. See dropdown for game count.')
   $(`form`).trigger(`reset`)
 
-  $('#show-games-list').html(`You have played ${responseData.games.length} total games`)
+  // $('#show-games-list').html(`You have played ${responseData.games.length} total games`)
+  $('#show-games-dropdown').text(`You have played ${responseData.games.length} total games`)
   $('#show-games-list').removeClass('hidden')
   $('.game-stats').removeClass('hidden')
 }
@@ -52,7 +53,7 @@ const newMoveSuccess = (id) => {
     return
   }
   if (store.cells[store.id]) {
-    $('#game-message').html('Misclicked')
+    $('#game-message').html('<h3>Misclicked</h3>')
     return
   }
   if (store.player === 'x') {

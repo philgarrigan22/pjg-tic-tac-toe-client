@@ -21,6 +21,7 @@ const signInSuccess = (responseData) => {
   $('#sign-out-button').removeClass('hidden')
   $('#new-game-button').removeClass('hidden')
   $('#get-games-button').removeClass('hidden')
+  $('.dropdown').removeClass('hidden')
   $('#sign-up-box').addClass('hidden')
   $('#sign-in-box').addClass('hidden')
 }
@@ -54,6 +55,7 @@ const signOutSuccess = () => {
   $('#sign-out-button').addClass('hidden')
   $('#new-game-button').addClass('hidden')
   $('#get-games-button').addClass('hidden')
+  $('.dropdown').addClass('hidden')
   $('.game-board').addClass('hidden')
   $('.game-stats').addClass('hidden')
   $('#show-games-list').addClass('hidden')
