@@ -14,51 +14,79 @@
     <body>
 
       <!-- Section to contain/center entire board and login. -->
-      <section class="container">
+
 
       <header> <!-- Header containing the three forms needed for sign up, sign in, and change password -->
-        <section class="col-12 load-authentication">
-          <div class="col-6">
-            <form id="sign-up-form">
-              <legend>Sign-Up</legend>
-              <input name="credentials[email]" type="email" placeholder="Enter email">
-              <input name="credentials[password]" type="password" placeholder="password">
-              <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
+        <nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-dark">
+          <div class="container d-flex justify-content-between">
+            <div>
+              <a href="#" class="navbar-brand">Tic Tac Toe</a>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button id="sign-up-btn" type="button" class="btn btn-secondary group1-btn">Sign Up</button>
+                <button type="button" class="btn btn-secondary group1-btn">Sign In</button>
+                <button type="button" class="btn btn-secondary hidden">Sign Out</button>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+    <section class="game-box container">
+
+      <section class="user-options">
+
+        <div id="sign-up-box" class="col-6 inner-fields rounded-box">
+          <form id="sign-up-form" class="inner-fields">
+            <div class="form-group">
+              <label for="signUp">Sign-Up</label>
+              <input name="credentials[email]" type="email" class="form-control" aria-describedby="emailSignUp" placeholder="Enter email">
+              <input name="credentials[password]" type="password" class="form-control" aria-describedby="passwordSignUp" placeholder="Password">
+              <input name="credentials[password_confirmation]" type="password" class="form-control" aria-describedby="passwordConfirmSignUp" placeholder="Password Confirmation">
               <input type="submit" value="Sign Up">
-            </form>
-          </div>
+            </div>
+          </form>
+        </div>
 
-          <div class="col-6">
-            <form id="sign-in-form">
-            <legend>Sign-In</legend>
-            <input name="credentials[email]" type="email" placeholder="email">
-            <input name="credentials[password]" type="password" placeholder="password">
-            <input type="submit" value="Sign In">
-            </form>
-          </div>
-        </section>
+        <div id="sign-in-box" class="col-6 inner-fields rounded-box">
+          <form id="sign-in-form" class="inner-fields">
+            <div class="form-group">
+              <label for="signIn">Sign-In</label>
+              <input name="credentials[email]" type="email" class="form-control" aria-describedby="emailSignIn" placeholder="Email">
+              <input name="credentials[password]" type="password" class="form-control" aria-describedby="passwordSignIp" placeholder="Password">
+              <input type="submit" value="Sign In">
+            </div>
+          </form>
+        </div>
 
-        <div class="col-12">
-          <form id="change-password-form" class="hidden">
-          <legend>Change Password</legend>
-          <input name="passwords[old]" type="password" placeholder="old password">
-          <input name="passwords[new]" type="password" placeholder="new password">
-          <input type="submit" value="Change Password">
-        </form>
-      </div>
 
-      <div class="col-12">
-        <button id="sign-out-button" class="hidden">Sign Out</button>
-      </div>
-    </header>
+        <div class="col-6">
+          <form id="change-password-form" class="inner-fields rounded-box hidden">
+            <div class="form-group">
+              <label for="changePassword">Change Password</label>
+              <input name="passwords[old]" type="password" class="form-control" aria-describedby="passwordHelp" placeholder="Old Password">
+              <input name="passwords[new]" type="password" class="form-control" aria-describedby="passwordHelp" placeholder="New Password">
+              <input type="submit" value="Change Password">
+            </div>
+          </form>
+        </div>
+      </section>
 
-      <br>
-      <div id="user-message"></div>
-      <br>
+      <section class="user-message-box container">
+        <div id="user-message" class="bottom-message"></div>
+      </section>
 
-        <section class="game-board my-2 hidden">
+      <section class="user-btns container">
+        <div class="col-12 inner-fields">
+          <button type="button" id="sign-out-button" class="btn hidden">Sign Out</button>
+        </div>
 
-          <div class="embed-responsive embed-responsive-1by1 gamearea">
+        <div class="col-12 inner-fields">
+          <button type="button" id="new-game-button" class="btn hidden">New Game</button>
+        </div>
+      </section>
+
+      <section class="game-board my-2 hidden">
+        <div class="embed-responsive embed-responsive-1by1 gamearea">
           <div class="embed-responsive-item gameboard">
               <div class="col-4 box" data-cell-index="0"></div>
               <div class="col-4 box" data-cell-index="1"></div>
@@ -70,17 +98,21 @@
               <div class="col-4 box" data-cell-index="7"></div>
               <div class="col-4 box" data-cell-index="8"></div>
           </div>
-          </div>
-          </section>
-
+        </div>
         <br>
-        <div id="game-message" class="hidden"></div>
+          <div id="game-message" class="inner-fields"></div>
+          <div id="win-message" class="inner-fields"></div>
         <br>
+      </section>
 
-        <section class="game-requests">
-          <button id="new-game-button" class="hidden">New Game</button>
+      <section class="user-btns container">
+        <div class="col-12 inner-fields">
+          <button type="button" id="get-games-button" class="btn hidden">Show Past Games</button>
+        </div>
+      </section>
+        <!-- <section class="game-requests">
           <button id="get-games-button" class="hidden">Show Past Games</button>
-        </section>
+        </section> -->
 
         <section class="game-stats hidden">
         <h3 id="show-games-list"></h3>
