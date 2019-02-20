@@ -38,9 +38,15 @@ const onSignOut = () => {
     .catch(ui.signOutFailure)
 }
 
+const onSignUpToggle = () => {
+  $('#sign-up-box').removeClass('hidden')
+  $('#sign-in-box').addClass('hidden')
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onSignUpToggle
 }

@@ -8,9 +8,9 @@ body {
 }
 
 label {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .user-options {
@@ -76,20 +76,20 @@ label {
 }
 
 .user-btns {
-  display: flex;
   align-items: center;
+  display: flex;
   flex-wrap: wrap;
 }
 
-.user-message-box{
+.user-message-box {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .game-stats {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
 }
 

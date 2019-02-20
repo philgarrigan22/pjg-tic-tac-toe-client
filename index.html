@@ -32,7 +32,7 @@
 
       <section>
         <section class="user-options">
-          <div id="sign-up-box" class="col-6 inner-fields rounded-box">
+          <div id="sign-up-box" class="col-6 inner-fields rounded-box hidden">
             <form id="sign-up-form" class="inner-fields">
               <div class="form-group">
                 <label for="signUp">Sign-Up</label>
@@ -53,6 +53,9 @@
                 <input name="credentials[email]" type="email" class="form-control" aria-describedby="emailSignIn" placeholder="Email">
                 <input name="credentials[password]" type="password" class="form-control" aria-describedby="passwordSignIp" placeholder="Password">
                 <input type="submit" value="Sign In">
+                <div class="bottom text-center">
+                  <p>No Account?<br><a href="#" class="sign-up-toggle">Sign Up Now</a></p>
+                </div>
               </div>
             </form>
           </div>

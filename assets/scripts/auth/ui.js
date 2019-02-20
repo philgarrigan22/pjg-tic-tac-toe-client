@@ -6,6 +6,8 @@ const gameActions = require('../gameplay/game-actions.js')
 const signUpSuccess = () => {
   gameActions.temporaryMessage('#user-message', 'Successfully Created User')
   $(`form`).trigger(`reset`)
+  $('#sign-up-box').addClass('hidden')
+  $('#sign-in-box').removeClass('hidden')
 }
 
 // Display success message, save the user info to store, and reset form fields.
@@ -47,7 +49,6 @@ const signOutSuccess = () => {
   $(`form`).trigger(`reset`)
 
   // Hide all logged-in content, show sign-in options
-  $('#sign-up-box').removeClass('hidden')
   $('#sign-in-box').removeClass('hidden')
   $('#change-password-form').addClass('hidden')
   $('#sign-out-button').addClass('hidden')
