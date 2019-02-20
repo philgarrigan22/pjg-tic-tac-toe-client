@@ -7,8 +7,19 @@ body {
   background-color: $body-bg-color;
 }
 
-header {
-  padding-top: 1rem;
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-options {
+  align-items: center;
+  // background-color: $alt-color;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem 0;
 }
 
 .gamearea {
@@ -19,6 +30,7 @@ header {
 }
 
 .gameboard {
+  background-color: lightblue;
   display: flex;
   flex-wrap: wrap;
 
@@ -42,10 +54,44 @@ header {
   }
 }
 
-.load-authentication {
-  display: flex;
+.game-box {
+  padding-bottom: 2rem;
 }
 
+.inner-fields {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bottom-message {
+  padding: 1.5rem;
+}
+
+.rounded-box {
+  background-color: lightblue;
+  border: 1px solid black;
+  border-radius: 25px;
+}
+
+.user-btns {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.user-message-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 // .box {
 //   align-items: center;
