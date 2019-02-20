@@ -4,12 +4,18 @@ $body-bg-color: $gray-200;
 $font-color: $light;
 
 body {
-  background-color: $body-bg-color;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  margin: auto;
+  min-height: 600px;
 }
 
-header {
-  padding-top: 1rem;
-}
+//
+// header {
+//   padding-top: 1rem;
+// }
 
 .gamearea {
   margin: auto;
@@ -42,9 +48,27 @@ header {
   }
 }
 
-.load-authentication {
+.sign-in-block {
+  align-items: center;
   display: flex;
+  justify-content: center;
 }
+
+.sign-up-block {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.user-form {
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 25px;
+  justify-content: center;
+  padding: 2rem;
+}
+
 
 
 // .box {

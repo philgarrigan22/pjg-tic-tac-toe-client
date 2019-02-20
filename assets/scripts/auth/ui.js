@@ -19,8 +19,7 @@ const signInSuccess = (responseData) => {
   $('#sign-out-button').removeClass('hidden')
   $('#new-game-button').removeClass('hidden')
   $('#get-games-button').removeClass('hidden')
-  $('#sign-up-form').addClass('hidden')
-  $('#sign-in-form').addClass('hidden')
+  $('.log-in-buttons').addClass('hidden')
 }
 
 // Used for both sign up and sign in failure. display success message, then reset form fields.
@@ -47,8 +46,7 @@ const signOutSuccess = () => {
   $(`form`).trigger(`reset`)
 
   // Hide all logged-in content, show sign-in options
-  $('#sign-up-form').removeClass('hidden')
-  $('#sign-in-form').removeClass('hidden')
+  $('.log-in-buttons').removeClass('hidden')
   $('#change-password-form').addClass('hidden')
   $('#sign-out-button').addClass('hidden')
   $('#new-game-button').addClass('hidden')

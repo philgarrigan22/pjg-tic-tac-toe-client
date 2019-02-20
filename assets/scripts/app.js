@@ -4,6 +4,7 @@
 // const example = require('./example')
 const gameEvents = require('./gameplay/events.js')
 const authEvents = require('./auth/events.js')
+const btnClicks = require('./btn-clicks.js')
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
@@ -14,5 +15,9 @@ $(() => {
   $('#sign-out-button').on('click', authEvents.onSignOut)
   $('#new-game-button').on('click', gameEvents.onCreateGame)
   $('#get-games-button').on('click', gameEvents.onShowGames)
-  $('.box').on('click', gameEvents.onNewMove)
+  $('.box').on('click', btnClicks.onNewMove)
+
+  // Button clicks for showing/hiding forms
+  $('#sign-up-btn').on('click', btnClicks.showSignUp)
+  $('.cancel').on('click', btnClicks.hideSignUp)
 })
