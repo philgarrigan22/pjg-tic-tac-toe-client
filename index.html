@@ -13,10 +13,7 @@
     </head>
     <body>
 
-      <!-- Section to contain/center entire board and login. -->
-
-
-      <header> <!-- Header containing the three forms needed for sign up, sign in, and change password -->
+      <header>
         <nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-dark">
           <div class="container d-flex justify-content-between">
             <div>
@@ -33,42 +30,46 @@
 
     <section class="game-box container">
 
-      <section class="user-options">
+      <section>
+        <section class="user-options">
+          <div id="sign-up-box" class="col-6 inner-fields rounded-box">
+            <form id="sign-up-form" class="inner-fields">
+              <div class="form-group">
+                <label for="signUp">Sign-Up</label>
+                <input name="credentials[email]" type="email" class="form-control" aria-describedby="emailSignUp" placeholder="Enter email">
+                <input name="credentials[password]" type="password" class="form-control" aria-describedby="passwordSignUp" placeholder="Password">
+                <input name="credentials[password_confirmation]" type="password" class="form-control" aria-describedby="passwordConfirmSignUp" placeholder="Password Confirmation">
+                <input type="submit" value="Sign Up">
+              </div>
+            </form>
+          </div>
+        </section>
 
-        <div id="sign-up-box" class="col-6 inner-fields rounded-box">
-          <form id="sign-up-form" class="inner-fields">
-            <div class="form-group">
-              <label for="signUp">Sign-Up</label>
-              <input name="credentials[email]" type="email" class="form-control" aria-describedby="emailSignUp" placeholder="Enter email">
-              <input name="credentials[password]" type="password" class="form-control" aria-describedby="passwordSignUp" placeholder="Password">
-              <input name="credentials[password_confirmation]" type="password" class="form-control" aria-describedby="passwordConfirmSignUp" placeholder="Password Confirmation">
-              <input type="submit" value="Sign Up">
-            </div>
-          </form>
-        </div>
+        <section class="user-options">
+          <div id="sign-in-box" class="col-6 inner-fields rounded-box">
+            <form id="sign-in-form" class="inner-fields">
+              <div class="form-group">
+                <label for="signIn">Sign-In</label>
+                <input name="credentials[email]" type="email" class="form-control" aria-describedby="emailSignIn" placeholder="Email">
+                <input name="credentials[password]" type="password" class="form-control" aria-describedby="passwordSignIp" placeholder="Password">
+                <input type="submit" value="Sign In">
+              </div>
+            </form>
+          </div>
+        </section>
 
-        <div id="sign-in-box" class="col-6 inner-fields rounded-box">
-          <form id="sign-in-form" class="inner-fields">
-            <div class="form-group">
-              <label for="signIn">Sign-In</label>
-              <input name="credentials[email]" type="email" class="form-control" aria-describedby="emailSignIn" placeholder="Email">
-              <input name="credentials[password]" type="password" class="form-control" aria-describedby="passwordSignIp" placeholder="Password">
-              <input type="submit" value="Sign In">
-            </div>
-          </form>
-        </div>
-
-
-        <div class="col-6">
-          <form id="change-password-form" class="inner-fields rounded-box hidden">
-            <div class="form-group">
-              <label for="changePassword">Change Password</label>
-              <input name="passwords[old]" type="password" class="form-control" aria-describedby="passwordHelp" placeholder="Old Password">
-              <input name="passwords[new]" type="password" class="form-control" aria-describedby="passwordHelp" placeholder="New Password">
-              <input type="submit" value="Change Password">
-            </div>
-          </form>
-        </div>
+        <section class="user-options">
+          <div class="col-6">
+            <form id="change-password-form" class="inner-fields rounded-box hidden">
+              <div class="form-group">
+                <label for="changePassword">Change Password</label>
+                <input name="passwords[old]" type="password" class="form-control" aria-describedby="passwordHelp" placeholder="Old Password">
+                <input name="passwords[new]" type="password" class="form-control" aria-describedby="passwordHelp" placeholder="New Password">
+                <input type="submit" value="Change Password">
+              </div>
+            </form>
+          </div>
+        </section>
       </section>
 
       <section class="user-message-box container">
@@ -85,7 +86,7 @@
         </div>
       </section>
 
-      <section class="game-board my-2 hidden">
+      <section class="game-board my-1 hidden">
         <div class="embed-responsive embed-responsive-1by1 gamearea">
           <div class="embed-responsive-item gameboard">
               <div class="col-4 box" data-cell-index="0"></div>

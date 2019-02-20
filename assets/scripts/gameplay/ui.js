@@ -14,6 +14,7 @@ const createGameSuccess = (gameData) => {
   // show game board once new game is started.
   $('.game-board').removeClass('hidden')
   $('#game-message').removeClass('hidden')
+  $('#win-message').html('')
 }
 
 // Display error message, then reset form fields.
