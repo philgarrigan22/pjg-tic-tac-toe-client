@@ -37,8 +37,7 @@ const showGamesSuccess = (responseData) => {
   // <p>Gameover?: ${games.over}</p>
   // <br>
   // `)
-
-  $('#show-games-list').html(`You have played ${responseData.games.length} total games`)
+  $('#show-games-dropdown').text(`You have played ${responseData.games.length} total games`)
   $('.game-stats').removeClass('hidden')
   // })
 }

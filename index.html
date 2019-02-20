@@ -12,11 +12,24 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="dropdown hidden">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown button
+            </button>
+          <div class="dropdown-menu">
+            <a id="get-games-button" href="#" class="dropdown-item hidden">Show Past Games</a>
+            <span id="show-games-dropdown"class="dropdown-item-text"></span>
+          </div>
+        </div>
+      </nav>
 
       <!-- Section to contain/center entire board and login. -->
       <section class="container">
 
       <header> <!-- Header containing the three forms needed for sign up, sign in, and change password -->
+
+
         <section class="col-12 load-authentication">
           <div class="col-6">
             <form id="sign-up-form">
@@ -79,7 +92,6 @@
 
         <section class="game-requests">
           <button id="new-game-button" class="hidden">New Game</button>
-          <button id="get-games-button" class="hidden">Show Past Games</button>
         </section>
 
         <section class="game-stats hidden">

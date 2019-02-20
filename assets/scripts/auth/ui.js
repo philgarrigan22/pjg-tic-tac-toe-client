@@ -19,6 +19,7 @@ const signInSuccess = (responseData) => {
   $('#sign-out-button').removeClass('hidden')
   $('#new-game-button').removeClass('hidden')
   $('#get-games-button').removeClass('hidden')
+  $('.dropdown').removeClass('hidden')
   $('#sign-up-form').addClass('hidden')
   $('#sign-in-form').addClass('hidden')
 }
@@ -56,6 +57,7 @@ const signOutSuccess = () => {
   $('.game-board').addClass('hidden')
   $('.game-stats').addClass('hidden')
   $('#game-message').addClass('hidden')
+  $('.dropdown').addClass('hidden')
 }
 
 // Display failure message, then reset form fields.
