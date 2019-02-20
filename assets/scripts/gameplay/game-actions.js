@@ -46,7 +46,7 @@ const changeTurn = () => {
   } else {
     store.player = 'x'
   }
-  $('#game-message').html(`<h3>Player ${store.player}'s turn.</h3>`)
+  $('#game-message').html(`<h3>Player ${store.player}'s turn</h3>`)
 }
 
 module.exports = {

@@ -9,17 +9,18 @@ const createGameSuccess = (gameData) => {
   gameActions.setGameBoard(gameData)
   gameActions.temporaryMessage('#user-message', 'New Game Successfully Created')
   $(`form`).trigger(`reset`)
-  $('#game-message').html(`<h3> Player ${store.player}'s turn. </h3>`)
+  $('#game-message').html(`<h3> Player ${store.player}'s turn </h3>`)
   $('.box').empty()
   // show game board once new game is started.
   $('.game-board').removeClass('hidden')
   $('#game-message').removeClass('hidden')
   $('#win-message').html('')
+  $('#game-over-failure').html('')
 }
 
 // Display error message, then reset form fields.
 const createGameFailure = () => {
-  gameActions.temporaryMessage('#user-message', 'Unable to create new game.')
+  gameActions.temporaryMessage('#user-message', 'Unable to create new game')
   $(`form`).trigger(`reset`)
 }
 
@@ -37,7 +38,7 @@ const showGamesSuccess = (responseData) => {
 
 // Display error message, then reset form fields.
 const showGamesFailure = () => {
-  gameActions.temporaryMessage('#user-message', 'Unable to show games.')
+  gameActions.temporaryMessage('#user-message', 'Unable to show games')
   $(`form`).trigger(`reset`)
 }
 
@@ -50,10 +51,12 @@ const newMoveSuccess = (id) => {
   console.log('new move success is being invoked')
   console.log(id)
   if (store.over) {
+    $('#game-over-failure').html('<h3>Invalid move, game had ended</h3>')
     return
   }
   if (store.cells[store.id]) {
-    $('#game-message').html('<h3>Misclicked</h3>')
+    gameActions.temporaryMessage('#game-over-failure', 'Misclicked')
+    // $('#game-over-failure').html('<h3>Misclicked</h3>')
     return
   }
   if (store.player === 'x') {
