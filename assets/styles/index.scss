@@ -2,6 +2,7 @@
 $alt-color: $cyan;
 $body-bg-color: $gray-200;
 $font-color: $light;
+$hover-color: #618685;
 
 body {
   background-color: $body-bg-color;
@@ -50,6 +51,11 @@ label {
 
     &:nth-last-child(-1n + 3) {
       border-bottom: 0;
+    }
+
+    &:hover {
+      background-color: $hover-color;
+      cursor: pointer;
     }
   }
 }
