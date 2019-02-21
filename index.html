@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tic Tac Toe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Do not add `link` tags-->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Do not add `script` tags-->
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
+
+  <body>
+    <header> <!-- Header includes navbar sign out and retreive games-->
+      <nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-dark">
+        <div class="container d-flex justify-content-between">
+          <div>
+            <a href="#" class="navbar-brand">Tic Tac Toe</a>
+          </div>
+          <div class="dropdown hidden">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Get Past Games
+            </button>
+            <div class="dropdown-menu dropdown-menu-left">
+              <a id="get-games-button" href="#" class="dropdown-item hidden">Show games below</a>
+              <span id="show-games-dropdown"class="dropdown-item-text"></span>
+            </div>
+            <button type="button" id="sign-out-button" class="btn btn-secondary hidden">Sign Out</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+  <section class="game-box container">
+    <section>
+      <section class="user-options">
+        <div id="sign-up-box" class="col-6 inner-fields rounded-box hidden">
+          <form id="sign-up-form" class="inner-fields">
+            <div class="form-group">
+              <label for="signUp">Sign-Up</label>
+              <input name="credentials[email]" type="email" class="form-control" aria-describedby="emailSignUp" placeholder="Enter email">
+              <input name="credentials[password]" type="password" class="form-control" aria-describedby="passwordSignUp" placeholder="Password">
+              <input name="credentials[password_confirmation]" type="password" class="form-control" aria-describedby="passwordConfirmSignUp" placeholder="Password Confirmation">
+              <input type="submit" value="Sign Up" class="col-12 btn btn-secondary">
+              <div class="bottom text-center">
+                <p><a href="#" class="sign-up-cancel-toggle">Cancel</a></p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="user-options">
+        <div id="sign-in-box" class="col-6 inner-fields rounded-box">
+          <form id="sign-in-form" class="inner-fields">
+            <div class="form-group">
+              <label for="signIn">Sign-In</label>
+              <input name="credentials[email]" type="email" class="form-control" aria-describedby="emailSignIn" placeholder="Email">
+              <input name="credentials[password]" type="password" class="form-control" aria-describedby="passwordSignIp" placeholder="Password">
+              <input type="submit" value="Sign In" class="col-12 btn btn-secondary">
+              <div class="bottom text-center">
+                <p>No Account?<br><a href="#" class="sign-up-toggle">Sign Up Now</a></p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="user-options">
+        <div class="col-6">
+          <form id="change-password-form" class="inner-fields rounded-box hidden">
+            <div class="form-group">
+              <label for="changePassword">Change Password</label>
+              <input name="passwords[old]" type="password" class="form-control" aria-describedby="passwordHelp" placeholder="Old Password">
+              <input name="passwords[new]" type="password" class="form-control" aria-describedby="passwordHelp" placeholder="New Password">
+              <input type="submit" value="Update" class="col-12 btn btn-secondary">
+            </div>
+          </form>
+        </div>
+      </section>
+    </section>
+
+    <section class="user-message-box container">
+      <div id="user-message" class="bottom-message"></div>
+    </section>
+
+    <section class="user-btns container">
+      <div class="col-12 inner-fields middle-buttons">
+        <button type="button" id="new-game-button" class="btn btn-secondary hidden">New Game</button>
+      </div>
+    </section>
+
+    <section class="game-board my-1 hidden">
+      <div class="embed-responsive embed-responsive-1by1 gamearea">
+        <div class="embed-responsive-item gameboard">
+          <div class="col-4 box" data-cell-index="0"></div>
+          <div class="col-4 box" data-cell-index="1"></div>
+          <div class="col-4 box" data-cell-index="2"></div>
+          <div class="col-4 box" data-cell-index="3"></div>
+          <div class="col-4 box" data-cell-index="4"></div>
+          <div class="col-4 box" data-cell-index="5"></div>
+          <div class="col-4 box" data-cell-index="6"></div>
+          <div class="col-4 box" data-cell-index="7"></div>
+          <div class="col-4 box" data-cell-index="8"></div>
+        </div>
+      </div>
+      <br>
+      <div id="game-message" class="inner-fields"></div>
+      <div id="win-message" class="inner-fields"></div>
+      <div id="game-over-failure" class="inner-fields"></div>
+      <br>
+    </section>
+
+    <section class="game-stats hidden">
+    <h3 id="show-games-list" class="hidden"></h3>
+    </section>
+
+    </section>
+  </body>
+</html>
