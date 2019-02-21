@@ -1,6 +1,6 @@
 # Tic Tac Toe! A project by Phil Garrigan
 
-A online version of the class tic tac toe game! Play against someone at the same terminal or play against yourself! Sign up and sign in are required to play; win detection and game statistis are provided for you.
+An online version of the class tic tac toe game! Play against someone at the same terminal or play against yourself! Sign up and sign in are required to play; win detection and game statistics are provided for you.
 
 ## Technologies used
 
@@ -53,7 +53,7 @@ This project is born out of the Software Engineering Immersive course at General
 ## Future Plan
 
 Things that I want to consider implementing:
-+ Adding a current sesssion win count ticker for each player.
++ Adding a current session win count ticker for each player.
 + Multi-player / Multi-device gameplay.
 + Redesign of UI for themed purposes.
 
