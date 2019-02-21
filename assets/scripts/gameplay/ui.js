@@ -26,10 +26,9 @@ const createGameFailure = () => {
 
 // Display message, reset form fields, then show amount of games played.
 const showGamesSuccess = (responseData) => {
-  console.log(responseData)
+  // console.log(responseData)
   gameActions.temporaryMessage('#user-message', 'Successfully accesed past games. See dropdown for game count.')
   $(`form`).trigger(`reset`)
-
   // $('#show-games-list').html(`You have played ${responseData.games.length} total games`)
   $('#show-games-dropdown').text(`You have played ${responseData.games.length} total games`)
   $('#show-games-list').removeClass('hidden')
@@ -48,8 +47,8 @@ const showGamesFailure = () => {
 // stop running the function. If cell not already filled check which player
 // is making the move. Then add that player (x or o) text to the cell being clicked.
 const newMoveSuccess = (id) => {
-  console.log('new move success is being invoked')
-  console.log(id)
+  // console.log('new move success is being invoked')
+  // console.log(id)
   if (store.over) {
     $('#game-over-failure').html('<h3>Invalid move, game had ended</h3>')
     return

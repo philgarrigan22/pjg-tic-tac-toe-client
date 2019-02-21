@@ -2,7 +2,7 @@ const config = require('../config.js')
 const store = require('../store.js')
 
 const createGame = () => {
-  console.log('create game is invoked')
+  // console.log('create game is invoked')
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
@@ -22,22 +22,10 @@ const showGames = () => {
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
-    // data: JSON.stringify(gameData)
   })
 }
 
 const newMove = (index, value, over) => {
-  console.log('API newMove is invoked')
-  console.log(`${typeof index} ${typeof value} ${typeof over}`)
-  // console.log(JSON.stringify({
-  //   'game': {
-  //     'cells': {
-  //       'index': index,
-  //       'value': value
-  //     },
-  //     'over': over
-  //   }
-  // }))
   return $.ajax({
     url: config.apiUrl + '/games/' + store.gameID,
     method: 'PATCH',

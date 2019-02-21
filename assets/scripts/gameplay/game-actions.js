@@ -10,7 +10,7 @@ const setGameBoard = (gameData) => {
   store.winner = ''
 }
 
-// Function to display temporaty message to whatever HTML area selected.
+// Function to display temporary message to whatever HTML area selected.
 const temporaryMessage = (selector, text) => {
   $(selector).html(text)
   setTimeout(() => $(selector).html('<h3></h3>'), 3500)
@@ -23,13 +23,13 @@ const checkGameOver = () => {
   }
 }
 
-// Set game board to check if the game is over or not
-// Check whether the clicked on cell value is empty. If it's empty, record
-// the value of that cell as either 'X' or 'O' within the store.cells array of
-// cells, based on player clicking. If cell isn't empty and has value of 'x' or
-// 'o', then do nothing to the store.cells array.
+// Set game board to check if the game is over or not.  Check whether the
+// clicked on cell value is empty. If it's empty, record the value of that cell
+// as either 'X' or 'O' within the store.cells array of cells, based on player
+// clicking. If cell isn't empty and has value of 'x' or 'o', then do nothing
+// to the store.cells array.
 const gameBoard = () => {
-  console.log('gamelogic gameBoard is invoked')
+  // console.log('gamelogic gameBoard is invoked')
   if (store.cells[store.id] === '') {
     store.cells[store.id] = store.player
   } else if (store.cells[store.id] === 'x' || 'o') {
@@ -39,8 +39,7 @@ const gameBoard = () => {
 // Changes turn. Changes the value of the player within the store.player, then
 // displays that player's turn as HTML.
 const changeTurn = () => {
-  console.log('gamelogic changeTurn is invoked')
-
+  // console.log('gamelogic changeTurn is invoked')
   if (store.player === 'x') {
     store.player = 'o'
   } else {

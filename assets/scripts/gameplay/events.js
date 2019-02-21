@@ -8,7 +8,7 @@ const onCreateGame = event => {
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure)
-  console.log(store.game)
+  // console.log(store.game)
 }
 
 const onShowGames = event => {
@@ -20,17 +20,14 @@ const onShowGames = event => {
 
 const onNewMove = event => {
   event.preventDefault()
-
   const id = $(event.target).data().cellIndex
   store.id = id
-
-  console.log(store.use)
+  // console.log(store.use)
   api.newMove(store.id, store.player, store.over)
     .then(ui.newMoveSuccess(id))
     .catch()
-
-  console.log('this is the store ')
-  console.log(store)
+  // console.log('this is the store ')
+  // console.log(store)
 }
 
 module.exports = {

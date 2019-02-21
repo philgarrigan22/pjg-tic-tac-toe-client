@@ -2,7 +2,7 @@ const store = require('../store.js')
 
 // Checks if the array has the winning/draw conditions
 const winConditions = (boardSpace) => {
-  console.log('gamelogic winConditions is invoked')
+  // console.log('gamelogic winConditions is invoked')
   // check for X win
   if (
     (boardSpace[0] === 'x' && boardSpace[1] === 'x' && boardSpace[2] === 'x') ||
@@ -14,7 +14,7 @@ const winConditions = (boardSpace) => {
     (boardSpace[0] === 'x' && boardSpace[4] === 'x' && boardSpace[8] === 'x') ||
     (boardSpace[2] === 'x' && boardSpace[4] === 'x' && boardSpace[6] === 'x')
   ) {
-    console.log('Player X wins!')
+    // console.log('Player X wins!')
     $('#win-message').html('Player X wins')
 
     // if 'x' win, store the game state as over, the player as x, the winner as
@@ -35,7 +35,7 @@ const winConditions = (boardSpace) => {
   (boardSpace[0] === 'o' && boardSpace[4] === 'o' && boardSpace[8] === 'o') ||
   (boardSpace[2] === 'o' && boardSpace[4] === 'o' && boardSpace[6] === 'o')
   ) {
-    console.log('Player O wins!')
+    // console.log('Player O wins!')
     $('#win-message').html('Player O wins')
     // if 'o' win, store the game state as over, the player as x, the winner as
     // user 'o', add 1 to the owins counter, and display winner 'O' message.
@@ -50,7 +50,7 @@ const winConditions = (boardSpace) => {
     boardSpace[3] !== '' && boardSpace[4] !== '' && boardSpace[5] !== '' &&
     boardSpace[6] !== '' && boardSpace[7] !== '' && boardSpace[8] !== '')
   ) {
-    console.log('Tie game')
+    // console.log('Tie game')
     $('#win-message').html(`It's a draw!`)
 
     // if game is a draw, store the game state as over, the player as x, the
